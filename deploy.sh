@@ -7,9 +7,16 @@ sudo apt install git maven -y
 chmod +x start.sh
 chmod +x save.sh
 
-mkdir ~/minecraft
-wget https://papermc.io/api/v2/projects/paper/versions/1.20/builds/300/downloads/paper-1.20-300.jar -O ~/minecraft/paper.jar
-java -Xms2G -Xmx4G -jar ~/minecraft/paper.jar nogui
+mkdir ~/spigot
+cd ~/spigot
+wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+java -jar ~/spigot/BuildTools.jar
+
+mkdir ~/minecraft-server
+cp ~/spigot/spigot-*.jar ~/minecraft-server/spigot.jar
+
+./start.sh
+
 echo "eula=true" > ~/minecraft/eula.txt
 
 ip a
