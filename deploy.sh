@@ -17,6 +17,6 @@ cp ~/spigot/spigot-*.jar ~/minecraft-server/spigot.jar
 
 ./start.sh
 
-echo "eula=true" > ~/minecraft/eula.txt
+echo "eula=true" > ~/minecraft-server/eula.txt
 
 ip a
