@@ -10,7 +10,7 @@ chmod +x save.sh
 mkdir ~/spigot
 cd ~/spigot
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
-java -jar ~/spigot/BuildTools.jar
+java -Xmx1024M -jar ~/spigot/BuildTools.jar
 
 mkdir ~/minecraft-server
 cp ~/spigot/spigot-*.jar ~/minecraft-server/spigot.jar
