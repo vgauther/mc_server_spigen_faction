@@ -13,6 +13,7 @@ sudo apt install git maven -y
 
 chmod +x start.sh
 chmod +x save.sh
+echo -e "\e[32 [Terminé] chmod des sh \e[0m"
 
 mkdir ~/spigot
 cd ~/spigot
