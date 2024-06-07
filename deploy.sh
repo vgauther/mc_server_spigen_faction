@@ -6,6 +6,8 @@ sudo apt install software-properties-common
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt update
 
+sudo apt install openjdk-21-jdk
+
 echo '-----------------------------------------------------'
 
 sudo apt install git maven -y
