@@ -1,7 +1,7 @@
 sudo apt update
 sudo apt upgrade -y
 
-sudo apt install openjdk-21-jre-headless -y
+sudo apt install openjdk-21-jdk
 sudo apt install git maven -y
 
 chmod +x start.sh
