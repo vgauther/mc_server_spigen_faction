@@ -4,16 +4,16 @@ sudo apt upgrade -y
 sh install_java_jdk21.sh
 
 
-echo -e "\e[32 [Terminé] -------------------------- \e[0m"
-echo -e "\e[32 [Terminé] Instalation de JAVA JDK 21 \e[0m"
-echo -e "\e[32 [Terminé] -------------------------- \e[0m"
+echo -e "\e[32m [Terminé] -------------------------- \e[0m"
+echo -e "\e[32m [Terminé] Instalation de JAVA JDK 21 \e[0m"
+echo -e "\e[32m [Terminé] -------------------------- \e[0m"
 
 
 sudo apt install git maven -y
 
 chmod +x start.sh
 chmod +x save.sh
-echo -e "\e[32 [Terminé] chmod des sh \e[0m"
+echo -e "\e[32m [Terminé] chmod des sh \e[0m"
 
 mkdir ~/spigot
 cd ~/spigot
@@ -27,6 +27,6 @@ cp ~/spigot/spigot-*.jar ~/minecraft-server/spigot.jar
 ./start.sh
 
 echo "eula=true" > ~/minecraft-server/eula.txt
-echo -e "\e[32 [Terminé] eula=true \e[0m"
+echo -e "\e[32m [Terminé] eula=true \e[0m"
 
 ip a
