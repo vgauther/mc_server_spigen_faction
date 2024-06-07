@@ -1,12 +1,7 @@
 sudo apt update
 sudo apt upgrade -y
 
-sudo apt update
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:openjdk-r/ppa
-sudo apt update
-
-sudo apt install openjdk-21-jdk
+sh install_java_jdk21.sh
 
 echo '-----------------------------------------------------'
 
