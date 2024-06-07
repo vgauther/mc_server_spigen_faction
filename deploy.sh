@@ -25,5 +25,6 @@ cp ~/spigot/spigot-*.jar ~/minecraft-server/spigot.jar
 ./start.sh
 
 echo "eula=true" > ~/minecraft-server/eula.txt
+echo -e "\e[32 [Terminé] eula=true \e[0m"
 
 ip a
