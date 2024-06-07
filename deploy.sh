@@ -2,7 +2,11 @@ sudo apt update
 sudo apt upgrade -y
 
 sh install_java_jdk21.sh
-
+if java -version 2>&1 | grep -q "openjdk version \"$JDK_VERSION\""; then
+  echo -e "\e[32mJDK $JDK_VERSION est déjà installé.\e[0m"
+else
+  sh install_java_jdk21.sh
+fi
 
 echo -e "\e[32m [Terminé] -------------------------- \e[0m"
 echo -e "\e[32m [Terminé] Instalation de JAVA JDK 21 \e[0m"
