@@ -7,6 +7,8 @@ sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
 sudo apt update
 sudo apt install adoptopenjdk-21-hotspot
 
+echo '-----------------------------------------------------'
+
 sudo apt install git maven -y
 
 chmod +x start.sh
