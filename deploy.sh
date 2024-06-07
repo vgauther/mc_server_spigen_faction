@@ -3,7 +3,11 @@ sudo apt upgrade -y
 
 sh install_java_jdk21.sh
 
-echo '-----------------------------------------------------'
+
+echo -e "\e[32 [Terminé] -------------------------- \e[0m"
+echo -e "\e[32 [Terminé] Instalation de JAVA JDK 21 \e[0m"
+echo -e "\e[32 [Terminé] -------------------------- \e[0m"
+
 
 sudo apt install git maven -y
 
