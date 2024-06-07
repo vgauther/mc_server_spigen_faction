@@ -26,9 +26,21 @@ java -Xmx1024M -jar ~/spigot/BuildTools.jar
 echo -e "\e[32 [Terminé] Execution de BuildTools.jar \e[0m"
 
 mkdir ~/minecraft-server
+
+#!/bin/bash
+
+DIR="~/minecraft-server"
+
+if [ ! -d "$DIR" ]; then
+  mkdir "$DIR"
+  echo -e "\e[32mLe dossier $DIR a été créé.\e[0m"
+else
+  echo -e "\e[31mLe dossier $DIR existe déjà.\e[0m"
+fi
+
 cp ~/spigot/spigot-*.jar ~/minecraft-server/spigot.jar
 
-./start.sh
+sh start.sh
 
 echo "eula=true" > ~/minecraft-server/eula.txt
 echo -e "\e[32m [Terminé] eula=true \e[0m"
