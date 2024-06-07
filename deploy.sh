@@ -1,7 +1,12 @@
 sudo apt update
 sudo apt upgrade -y
 
-sudo apt install openjdk-21-jdk
+sudo apt install wget apt-transport-https
+wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+sudo apt update
+sudo apt install adoptopenjdk-21-hotspot
+
 sudo apt install git maven -y
 
 chmod +x start.sh
