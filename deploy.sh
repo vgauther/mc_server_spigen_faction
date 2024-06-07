@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt update
 sudo apt upgrade -y
 
@@ -24,10 +26,6 @@ cd ~/spigot
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 java -Xmx1024M -jar ~/spigot/BuildTools.jar
 echo -e "\e[32 [Terminé] Execution de BuildTools.jar \e[0m"
-
-mkdir ~/minecraft-server
-
-#!/bin/bash
 
 DIR="~/minecraft-server"
 
