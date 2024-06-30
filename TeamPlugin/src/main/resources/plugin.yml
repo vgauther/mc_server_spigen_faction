@@ -1,0 +1,14 @@
+name: TeamPlugin
+version: 1.0
+api-version: 1.20
+main: me.vgauther.teamplugin.TeamPlugin
+commands:
+  createTeam:
+    description: Crée une nouvelle équipe
+    usage: /createTeam <teamName>
+  joinTeam:
+    description: Rejoint une équipe existante
+    usage: /joinTeam <teamName>
+  spawnQuestNPC:
+    description: Fait apparaître un PNJ pour gérer les quêtes
+    usage: /spawnQuestNPC

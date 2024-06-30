@@ -1,0 +1,8 @@
+me\vgauther\teamplugin\TeamPlugin.class
+me\vgauther\teamplugin\SpawnQuestNPCCommand.class
+me\vgauther\teamplugin\NPCInteractListener.class
+me\vgauther\teamplugin\JoinTeamCommand.class
+me\vgauther\teamplugin\Quest.class
+me\vgauther\teamplugin\QuestManager.class
+me\vgauther\teamplugin\CreateTeamCommand.class
+me\vgauther\teamplugin\TeamManager.class
