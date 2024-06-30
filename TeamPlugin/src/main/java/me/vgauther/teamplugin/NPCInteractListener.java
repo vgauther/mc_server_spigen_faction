@@ -6,6 +6,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.Inventory;
@@ -42,8 +44,13 @@ public class NPCInteractListener implements Listener {
                 Quest quest = questManager.getQuestForTeam(teamName);
                 if (quest != null) {
                     for (ItemStack item : inventory.getContents()) {
-                        if (item != null && quest.addCollectedBlock(item.getType())) {
-                            item.setAmount(0); // Clear item stack if added to quest
+                        if (item != null) {
+                            if (quest.addCollectedBlock(item.getType())) {
+                                item.setAmount(0); // Clear item stack if added to quest
+                            } else {
+                                // Return items that are not needed or are excess
+                                player.getInventory().addItem(item);
+                            }
                         }
                     }
                     player.sendMessage(getQuestStatusMessage(quest));
@@ -62,5 +69,25 @@ public class NPCInteractListener implements Listener {
             }
         }
         return message.toString();
+    }
+
+    @EventHandler
+    public void onEntityDamage(EntityDamageEvent event) {
+        if (event.getEntity() instanceof Villager) {
+            Villager villager = (Villager) event.getEntity();
+            if ("Quest Giver".equals(villager.getCustomName())) {
+                event.setCancelled(true);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
+        if (event.getEntity() instanceof Villager) {
+            Villager villager = (Villager) event.getEntity();
+            if ("Quest Giver".equals(villager.getCustomName())) {
+                event.setCancelled(true);
+            }
+        }
     }
 }

@@ -40,6 +40,9 @@ public class SpawnQuestNPCCommand implements CommandExecutor {
             npc.setCustomName("Quest Giver");
             npc.setCustomNameVisible(true);
             npc.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, Integer.MAX_VALUE, 10));
+            npc.setAI(false); // Disable AI to prevent movement
+            npc.setCollidable(false); // Prevent pushing
+            npc.setInvulnerable(true); // Make invulnerable to damage
         } else {
             player.sendMessage("No suitable block found.");
         }

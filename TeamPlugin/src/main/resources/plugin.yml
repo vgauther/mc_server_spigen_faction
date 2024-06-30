@@ -12,3 +12,6 @@ commands:
   spawnQuestNPC:
     description: Fait apparaître un PNJ pour gérer les quêtes
     usage: /spawnQuestNPC
+  checkTeam:
+    description: Affiche l'équipe à laquelle vous appartenez
+    usage: /checkTeam
