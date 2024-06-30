@@ -37,7 +37,7 @@ public class SpawnQuestNPCCommand implements CommandExecutor {
 
         if (blockLocation != null) {
             Villager npc = blockLocation.getWorld().spawn(blockLocation, Villager.class);
-            npc.setCustomName("Quest Giver");
+            npc.setCustomName("Gérard");
             npc.setCustomNameVisible(true);
             npc.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, Integer.MAX_VALUE, 10));
             npc.setAI(false); // Disable AI to prevent movement
