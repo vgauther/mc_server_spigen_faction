@@ -15,3 +15,9 @@ commands:
   checkTeam:
     description: Affiche l'équipe à laquelle vous appartenez
     usage: /checkTeam
+  kickMember:
+    description: Permet au chef d'équipe d'exclure un membre de l'équipe
+    usage: /kickMember <playerName>
+  acceptJoinRequest:
+    description: Permet à un membre d'équipe d'accepter une demande de rejoindre l'équipe
+    usage: /acceptJoinRequest <playerName> <teamName>

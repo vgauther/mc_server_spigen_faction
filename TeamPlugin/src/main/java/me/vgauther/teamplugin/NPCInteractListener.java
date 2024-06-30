@@ -26,7 +26,7 @@ public class NPCInteractListener implements Listener {
     public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
         if (event.getRightClicked() instanceof Villager) {
             Villager villager = (Villager) event.getRightClicked();
-            if ("Quest Giver".equals(villager.getCustomName())) {
+            if ("Gérard".equals(villager.getCustomName())) {
                 Player player = event.getPlayer();
                 Inventory inventory = Bukkit.createInventory(player, 27, "Quest Items");
                 player.openInventory(inventory);
@@ -75,7 +75,7 @@ public class NPCInteractListener implements Listener {
     public void onEntityDamage(EntityDamageEvent event) {
         if (event.getEntity() instanceof Villager) {
             Villager villager = (Villager) event.getEntity();
-            if ("Quest Giver".equals(villager.getCustomName())) {
+            if ("Gérard".equals(villager.getCustomName())) {
                 event.setCancelled(true);
             }
         }
@@ -85,7 +85,7 @@ public class NPCInteractListener implements Listener {
     public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         if (event.getEntity() instanceof Villager) {
             Villager villager = (Villager) event.getEntity();
-            if ("Quest Giver".equals(villager.getCustomName())) {
+            if ("Gérard".equals(villager.getCustomName())) {
                 event.setCancelled(true);
             }
         }

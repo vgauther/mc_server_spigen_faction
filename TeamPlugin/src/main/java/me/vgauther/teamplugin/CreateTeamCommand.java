@@ -17,20 +17,21 @@ public class CreateTeamCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Only players can use this command.");
+            sender.sendMessage("Only players can create teams.");
             return true;
         }
         if (args.length != 1) {
             sender.sendMessage("Usage: /createTeam <teamName>");
-            return false;
+            return true;
         }
-
+        Player player = (Player) sender;
         String teamName = args[0];
-        if (teamManager.createTeam(teamName)) {
-            questManager.createQuestForTeam(teamName);
-            sender.sendMessage("Team " + teamName + " created successfully with a new quest.");
+
+        if (teamManager.createTeam(teamName, player)) {
+            questManager.createQuestForTeam(teamName); // Create quest for the team
+            player.sendMessage("Team " + teamName + " created and you are the leader!");
         } else {
-            sender.sendMessage("Team " + teamName + " already exists.");
+            player.sendMessage("A team with that name already exists.");
         }
         return true;
     }

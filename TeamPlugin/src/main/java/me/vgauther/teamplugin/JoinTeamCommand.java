@@ -20,15 +20,15 @@ public class JoinTeamCommand implements CommandExecutor {
         }
         if (args.length != 1) {
             sender.sendMessage("Usage: /joinTeam <teamName>");
-            return false;
+            return true;
         }
-
-        String teamName = args[0];
         Player player = (Player) sender;
-        if (teamManager.joinTeam(teamName, player)) {
-            sender.sendMessage("Joined team " + teamName + " successfully.");
+        String teamName = args[0];
+
+        if (teamManager.requestJoinTeam(teamName, player)) {
+            player.sendMessage("Join request sent to team " + teamName + ". Wait for approval.");
         } else {
-            sender.sendMessage("Team " + teamName + " does not exist.");
+            player.sendMessage("Team " + teamName + " does not exist.");
         }
         return true;
     }
